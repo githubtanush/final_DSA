@@ -2,27 +2,60 @@
 #include<vector>
 using namespace std;
 
-void print(vector<int> &v){
-    for(int i = 0; i < v.size();i++){
-        cout<<v[i]<<" ";
-    }
-}
+// bool isPerfectSquare(int num) {
+//     if (num < 1)
+//         return false;
 
-int main(){
-    vector<int> v;
-    int n ;
-    cout<<"Enter the number that how many elements you want to take : ";
-    cin>>n;
-    int target ;
-    cout<<"Enter which element you want to find : ";
-    cin>>target;
-    for(int  i = 0; i< n;i++){
-        int data;
-        cin>>data;
-        v.push_back(data);
-    }
+//     int s = 1;
+//     int e = num;
     
-    print(v);
+//     while (s <= e) {
+//         long long mid = s + (e - s) / 2;
+//         long long square = mid * mid;
+        
+//         if (square == num){
+//         cout<<mid;
+//             return true;
+//         }
+//         else if (square < num)
+//             s = mid + 1;
+//         else
+//             e = mid - 1;
+//     }
+    
+//     return false;
+// }
+ 
+ int mySqrt(int x) {
+        int s = 0;
+        int e = x;
+        long long int mid = s + (e-s)/2;
+        int ans = -1;
+        while(s<=e){
+            //kya mid hi to answer nhi hai 
+            if(mid*mid == x){
+                return mid;
+            }
+            else if (mid*mid < x){
+                    //ans store 
+                    //right mein jao
+                    ans = mid;
+                    s = mid + 1;
+            }
+            else {
+                e = mid - 1;
+            }
+            mid = s + (e-s)/2;
+        }
+        return ans;
+    }
+//Home work = show square root in points
+int main(){
+    int target ;
+    cout<<"Enter which element for which you want find the square root : ";
+    cin>>target;
+    int mid = mySqrt(target);
+    cout<<"The square root for this target is : "<<mid<<endl;
     return 0;
 
 }
