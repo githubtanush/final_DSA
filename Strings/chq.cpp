@@ -47,17 +47,19 @@ void converttoUpperCase(char ch[],int n){
     }
 }
 int main(){
-    char ch[100];
-    cin.getline(ch,100);
-    // int len = findLength(ch,100);
-    // cout<<"Length of String : "<<len <<endl;
-    // cout<<"Printing Length : "<<strlen(ch)<<endl;
-    cout<<"Before : "<<ch<<endl;
-    // int len = findLength(ch,100);
-    converttoUpperCase(ch,100);
-    // reverseString(ch,len);
+    char ch[100];//character array of length 100
+    // cin>>ch;//yeh cin mein ek disadvantage hai ki yeh vala cin next line , space ya tab space ko as a delimeter treat krta hai 
+    cin.getline(ch,100);//
+    // // int len = findLength(ch,100);
+    // // cout<<"Length of String : "<<len <<endl;
+    // // cout<<"Printing Length : "<<strlen(ch)<<endl;
+    // cout<<"Before : "<<ch<<endl;
+    // // int len = findLength(ch,100);
+    // converttoUpperCase(ch,100);
+    // // reverseString(ch,len);
 
-    cout<<"After : "<<ch<<endl;
+    // cout<<"After : "<<ch<<endl;
+    cout<<ch;
 
     return 0;
 }
